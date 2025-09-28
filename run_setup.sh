@@ -3,6 +3,8 @@
 # Exit immediately if a command exits with a non-zero status
 set -eEo pipefail
 
+echo "Daniels Omarchy Dotfiles and extensions \n"
+
 export DOTFILES_PATH=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 
 # Install
