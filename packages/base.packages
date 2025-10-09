@@ -15,4 +15,11 @@ kdenlive
 localsend
 spotify
 rider
+visual-studio-code-bin
 zed
+
+# dev libraries
+aspnet-runtime
+aspnet-runtime-8.0
+dotnet-sdk
+dotnet-sdk-8.0

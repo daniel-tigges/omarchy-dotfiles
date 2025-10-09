@@ -1,0 +1,17 @@
+{
+   "security.workspace.trust.enabled": false,
+   "editor.suggestSelection": "first",
+   // VIM Settings
+   "vim.incsearch": true,
+   "vim.useSystemClipboard": true,
+   "vim.useCtrlKeys": true,
+   "vim.hlsearch": true,
+   "vim.leader": "<Space>",
+   "vim.handleKeys": {
+      // Avoid Vim overriding VSCode default keybindings like find or select all in Windows
+      // These two keybindings below shouldn't matter in Mac
+      "<C-a>": false,
+      "<C-f>": false,
+      "<C-p>": false
+   },
+}
