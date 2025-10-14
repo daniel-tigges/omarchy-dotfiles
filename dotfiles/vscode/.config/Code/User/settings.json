@@ -1,17 +1,107 @@
-{
-   "security.workspace.trust.enabled": false,
-   "editor.suggestSelection": "first",
-   // VIM Settings
-   "vim.incsearch": true,
-   "vim.useSystemClipboard": true,
-   "vim.useCtrlKeys": true,
-   "vim.hlsearch": true,
-   "vim.leader": "<Space>",
-   "vim.handleKeys": {
-      // Avoid Vim overriding VSCode default keybindings like find or select all in Windows
-      // These two keybindings below shouldn't matter in Mac
-      "<C-a>": false,
-      "<C-f>": false,
-      "<C-p>": false
-   },
+  {
+    "workbench.iconTheme": "vira-icons-deepforest",
+    "workbench.colorTheme": "Vira Deepforest",
+    "editor.fontFamily": "Cascadia Mono",
+    "security.workspace.trust.enabled": false,
+    "window.enableMenuBarMnemonics": false,
+    "json.format.keepLines": true,
+    // VIM Settings
+    "vim.changeWordIncludesWhitespace": true,
+    "vim.incsearch": true,
+    "vim.highlightedyank.enable": true,
+    "vim.useSystemClipboard": true,
+    "vim.useCtrlKeys": true,
+    "vim.hlsearch": true,
+    "vim.leader": "<Space>",
+    "vim.handleKeys": {
+        // Avoid Vim overriding VSCode default keybindings like find or select all in Windows
+        // These two keybindings below shouldn't matter in Mac
+        "<C-a>": false,
+        "<C-f>": false,
+        "<C-S-space>": false,
+        "<C-b>": false,
+    },
+    "vim.insertModeKeyBindings": [
+        { "before": [ "j", "j" ], "after": [ "<Esc>" ] },
+        { "before": [ "<C-space>" ], "commands": [ "workbench.action.terminal.requestCompletions" ] },
+    ],
+    "vim.normalModeKeyBindings": [
+        { "before": [ "alt+h", ], "commands": [ "workbench.action.focusLeftGroup", ] },
+        { "before": [ "alt+l", ], "commands": [ "workbench.action.focusRightGroup", ] },
+        { "before": [ "leader", "p" ], "commands": [ "workbench.action.showCommands", ] },
+        { "before": [ "leader", "t" ], "commands": [ "workbench.view.testing.focus", ] },
+        { "before": [ "leader", "Enter" ], "commands": [ "workbench.action.terminal.toggleTerminal", ] },
+        { "before": [ "leader", "g" ], "commands": [ "workbench.action.quickOpen", ] },
+        { "before": [ "leader", "e" ], "commands": [ "workbench.view.explorer", ] },
+        { "before": [ "leader", "f" ], "commands": [ "editor.action.formatDocument", ] },
+        { "before": [ "g", "d" ], "commands": [ "editor.action.goToTypeDefinition" ] },
+        { "before": [ "g", "i" ], "commands": [ "editor.action.goToImplementation" ] },
+        { "before": [ "g", "r" ], "commands": [ "editor.action.goToReferences" ] },
+        { "before": [ "g", "h" ], "commands": [ "editor.action.showHover" ] },
+        { "before": [ "q", "q" ], "commands": [ "editor.action.commentLine" ] }
+    ],
+    "vim.visualModeKeyBindings": [
+        { "before": [ "leader", "p" ], "commands": [ "workbench.action.showCommands", ] },
+        { "before": [ "q", "q" ], "commands": [ "editor.action.commentLine" ] }
+    ],
+    "vim.visualModeKeyBindingsNonRecursive": [
+        { "before": [ "leader", "p" ], "commands": [ "workbench.action.showCommands", ] },
+        { "before": [ "q", "q" ], "commands": [ "editor.action.commentLine" ] }
+    ],
+    // Theme Properties
+    "workbench.colorCustomizations": {
+        "[Vira*]": {
+            "statusBar.debuggingBackground": "#80CBC433",
+            "statusBar.debuggingForeground": "#80CBC4",
+            "toolbar.activeBackground": "#80CBC426",
+            "button.background": "#80CBC4",
+            "button.hoverBackground": "#80CBC4cc",
+            "extensionButton.separator": "#80CBC433",
+            "extensionButton.background": "#80CBC414",
+            "extensionButton.foreground": "#80CBC4",
+            "extensionButton.hoverBackground": "#80CBC433",
+            "extensionButton.prominentForeground": "#80CBC4",
+            "extensionButton.prominentBackground": "#80CBC414",
+            "extensionButton.prominentHoverBackground": "#80CBC433",
+            "activityBarBadge.background": "#80CBC4",
+            "activityBar.activeBorder": "#80CBC4",
+            "activityBarTop.activeBorder": "#80CBC4",
+            "list.inactiveSelectionIconForeground": "#80CBC4",
+            "list.activeSelectionForeground": "#80CBC4",
+            "list.inactiveSelectionForeground": "#80CBC4",
+            "list.highlightForeground": "#80CBC4",
+            "sash.hoverBorder": "#80CBC480",
+            "list.activeSelectionIconForeground": "#80CBC4",
+            "scrollbarSlider.activeBackground": "#80CBC480",
+            "editorSuggestWidget.highlightForeground": "#80CBC4",
+            "textLink.foreground": "#80CBC4",
+            "progressBar.background": "#80CBC4",
+            "pickerGroup.foreground": "#80CBC4",
+            "tab.activeBorder": "#80CBC4",
+            "tab.activeBorderTop": "#80CBC400",
+            "tab.unfocusedActiveBorder": "#80CBC4",
+            "tab.unfocusedActiveBorderTop": "#80CBC400",
+            "tab.activeModifiedBorder": "#80CBC400",
+            "notificationLink.foreground": "#80CBC4",
+            "editorWidget.resizeBorder": "#80CBC4",
+            "editorWidget.border": "#80CBC4",
+            "settings.modifiedItemIndicator": "#80CBC4",
+            "panelTitle.activeBorder": "#80CBC4",
+            "breadcrumb.activeSelectionForeground": "#80CBC4",
+            "menu.selectionForeground": "#80CBC4",
+            "menubar.selectionForeground": "#80CBC4",
+            "editor.findMatchBorder": "#80CBC4",
+            "selection.background": "#80CBC440",
+            "statusBarItem.remoteBackground": "#80CBC414",
+            "statusBarItem.remoteHoverBackground": "#80CBC4",
+            "statusBarItem.remoteForeground": "#80CBC4",
+            "notebook.inactiveFocusedCellBorder": "#80CBC480",
+            "commandCenter.activeBorder": "#80CBC480",
+            "chat.slashCommandForeground": "#80CBC4",
+            "chat.avatarForeground": "#80CBC4",
+            "activityBarBadge.foreground": "#000000",
+            "button.foreground": "#000000",
+            "statusBarItem.remoteHoverForeground": "#000000"
+        }
+    }
 }
