@@ -1,4 +1,53 @@
 // Place your key bindings in this file to override the defaults
 [
-    
+    {
+        "key": "j",
+        "command": "selectNextSuggestion",
+        "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+    },
+    {
+        "key": "k",
+        "command": "selectPrevSuggestion",
+        "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+    },
+    {
+        "key": "h",
+        "command": "cursorLeft",
+        "when": "suggestWidgetVisible && textInputFocus"
+    },
+    {
+        "key": "l",
+        "command": "cursorRight",
+        "when": "suggestWidgetVisible && textInputFocus"
+    },
+    {
+        "key": "alt+h",
+        "command": "workbench.action.focusLeftGroup",
+    },
+    {
+        "key": "alt+l",
+        "command": "workbench.action.focusRightGroup",
+    },
+    {
+        "key": "alt+k",
+        "command": "workbench.action.focusAboveGroup",
+    },
+    {
+        "key": "alt+j",
+        "command": "workbench.action.focusBelowGroup",
+    },
+    {
+        "key": "alt+w",
+        "command": "workbench.action.closeActiveEditor"
+    },
+    {
+        "key": "alt+b",
+        "command": "workbench.action.navigateBack",
+        "when": "canNavigateBack"
+    },
+    {
+        "key": "alt+f",
+        "command": "workbench.action.navigateForward",
+        "when": "canNavigateForward"
+    }
 ]
