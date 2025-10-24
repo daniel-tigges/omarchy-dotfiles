@@ -1,6 +1,7 @@
   {
-    "workbench.iconTheme": "vira-icons-deepforest",
-    "workbench.colorTheme": "Vira Deepforest",
+  "update.mode": "none",
+    "workbench.iconTheme": "vscode-icons",
+    "workbench.colorTheme": "Everforest Dark",
     "editor.fontFamily": "Cascadia Mono",
     "security.workspace.trust.enabled": false,
     "window.enableMenuBarMnemonics": false,
@@ -19,6 +20,8 @@
         "<C-a>": false,
         "<C-f>": false,
         "<C-S-space>": false,
+        "<C-j>": false,
+        "<C-k>": false,
         "<C-b>": false,
     },
     "vim.insertModeKeyBindings": [
@@ -38,7 +41,8 @@
         { "before": [ "g", "i" ], "commands": [ "editor.action.goToImplementation" ] },
         { "before": [ "g", "r" ], "commands": [ "editor.action.goToReferences" ] },
         { "before": [ "g", "h" ], "commands": [ "editor.action.showHover" ] },
-        { "before": [ "q", "q" ], "commands": [ "editor.action.commentLine" ] }
+        { "before": [ "q", "q" ], "commands": [ "editor.action.commentLine" ] },
+        { "before": [ "leader", "d", "t" ], "commands": [ "testing.debugAtCursor", "workbench.panel.testResults.view.focus"  ] }
     ],
     "vim.visualModeKeyBindings": [
         { "before": [ "leader", "p" ], "commands": [ "workbench.action.showCommands", ] },
