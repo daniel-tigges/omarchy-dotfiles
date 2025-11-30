@@ -49,5 +49,22 @@
         "key": "alt+f",
         "command": "workbench.action.navigateForward",
         "when": "canNavigateForward"
+    },
+    {
+        "key": "alt+d",
+        "command": "editor.action.moveLinesDownAction",
+    },
+    {
+        "key": "alt+u",
+        "command": "editor.action.moveLinesUpAction",
+    },
+    {
+        "key": "ctrl+shift+b",
+        "command": "workbench.action.tasks.runTask"
+    },
+    {
+        "key": "ctrl+shift+b",
+        "command": "-workbench.action.tasks.build",
+        "when": "taskCommandsRegistered"
     }
 ]

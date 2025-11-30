@@ -1,7 +1,7 @@
-  {
-  "update.mode": "none",
+{
+    "update.mode": "none",
     "workbench.iconTheme": "vscode-icons",
-    "workbench.colorTheme": "Everforest Dark",
+    "workbench.colorTheme": "GitHub Dark Dimmed",
     "editor.fontFamily": "Cascadia Mono",
     "security.workspace.trust.enabled": false,
     "window.enableMenuBarMnemonics": false,
@@ -16,7 +16,6 @@
     "vim.leader": "<Space>",
     "vim.handleKeys": {
         // Avoid Vim overriding VSCode default keybindings like find or select all in Windows
-        // These two keybindings below shouldn't matter in Mac
         "<C-a>": false,
         "<C-f>": false,
         "<C-S-space>": false,
@@ -42,7 +41,7 @@
         { "before": [ "g", "r" ], "commands": [ "editor.action.goToReferences" ] },
         { "before": [ "g", "h" ], "commands": [ "editor.action.showHover" ] },
         { "before": [ "q", "q" ], "commands": [ "editor.action.commentLine" ] },
-        { "before": [ "leader", "d", "t" ], "commands": [ "testing.debugAtCursor", "workbench.panel.testResults.view.focus"  ] }
+        { "before": [ "leader", "d", "t" ], "commands": [ "testing.debugAtCursor", "workbench.panel.testResults.view.focus" ] }
     ],
     "vim.visualModeKeyBindings": [
         { "before": [ "leader", "p" ], "commands": [ "workbench.action.showCommands", ] },
@@ -107,5 +106,8 @@
             "button.foreground": "#000000",
             "statusBarItem.remoteHoverForeground": "#000000"
         }
+    },
+    "[vue]": {
+        "editor.defaultFormatter": "Vue.volar"
     }
 }
