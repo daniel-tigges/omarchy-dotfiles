@@ -1,8 +1,9 @@
 {
     "update.mode": "none",
     "workbench.iconTheme": "vscode-icons",
-    "workbench.colorTheme": "GitHub Dark Dimmed",
+    "workbench.colorTheme": "Gruvbox Dark Medium",
     "editor.fontFamily": "Cascadia Mono",
+    "editor.lineNumbers": "relative",
     "security.workspace.trust.enabled": false,
     "window.enableMenuBarMnemonics": false,
     "json.format.keepLines": true,
@@ -109,5 +110,6 @@
     },
     "[vue]": {
         "editor.defaultFormatter": "Vue.volar"
-    }
+    },
+    "workbench.startupEditor": "none"
 }
