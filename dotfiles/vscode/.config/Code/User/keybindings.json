@@ -59,12 +59,25 @@
         "command": "editor.action.moveLinesUpAction",
     },
     {
-        "key": "ctrl+shift+b",
+        "key": "ctrl+t",
         "command": "workbench.action.tasks.runTask"
     },
     {
         "key": "ctrl+shift+b",
         "command": "-workbench.action.tasks.build",
         "when": "taskCommandsRegistered"
+    },
+    {
+        "key": "ctrl+t",
+        "command": "-workbench.action.showAllSymbols"
+    },
+    {
+        "key": "ctrl+t",
+        "command": "-extension.vim_ctrl+t",
+        "when": "editorTextFocus && vim.active && vim.use<C-t> && !inDebugRepl"
+    },
+    {
+        "key": "ctrl+shift+b",
+        "command": "workbench.action.tasks.build"
     }
 ]

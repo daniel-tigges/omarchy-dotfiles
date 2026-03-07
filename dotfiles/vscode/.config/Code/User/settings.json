@@ -23,6 +23,7 @@
         "<C-j>": false,
         "<C-k>": false,
         "<C-b>": false,
+        "<C-d>": false
     },
     "vim.insertModeKeyBindings": [
         { "before": [ "j", "j" ], "after": [ "<Esc>" ] },
@@ -111,5 +112,6 @@
     "[vue]": {
         "editor.defaultFormatter": "Vue.volar"
     },
-    "workbench.startupEditor": "none"
+    "workbench.startupEditor": "none",
+    "vsicons.dontShowNewVersionMessage": true
 }
