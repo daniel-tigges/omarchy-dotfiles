@@ -1,0 +1,25 @@
+[Unit]
+Description=Rclone Mount for Daniels Vorstansdrive
+Wants=network-online.target
+After=network-online.target
+AssertPathIsDirectory=/home/daniel/OneDrive-DJK-Vorstand
+
+[Service]
+Type=notify
+User=daniel
+Group=daniel
+
+ExecStart=/usr/bin/rclone mount onedrive-djk-vorstand: /home/daniel/OneDrive-DJK-Vorstand \
+  --config /home/daniel/.config/rclone/rclone.conf \
+  --vfs-cache-mode full \
+  --vfs-cache-max-size 10G \
+  --log-level INFO \
+  --log-file /tmp/rclone-onedrive-vorstand.log
+
+ExecStop=/bin/fusermount -u /home/daniel/OneDrive-DJK-Vorstand
+
+Restart=on-failure
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target

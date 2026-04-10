@@ -1,0 +1,25 @@
+[Unit]
+Description=Rclone Mount for Daniels Opencloud
+Wants=network-online.target
+After=network-online.target
+AssertPathIsDirectory=/home/daniel/opencloud-daniel
+
+[Service]
+Type=notify
+User=daniel
+Group=daniel
+
+ExecStart=/usr/bin/rclone mount opencloud-daniel: /home/daniel/opencloud-daniel \
+  --config /home/daniel/.config/rclone/rclone.conf \
+  --vfs-cache-mode full \
+  --vfs-cache-max-size 10G \
+  --log-level INFO \
+  --log-file /tmp/rclone-opencloud.log
+
+ExecStop=/bin/fusermount -u /home/daniel/opencloud-daniel
+
+Restart=on-failure
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
