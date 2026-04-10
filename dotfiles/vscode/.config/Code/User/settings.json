@@ -1,7 +1,7 @@
 {
     "update.mode": "none",
     "workbench.iconTheme": "vscode-icons",
-    "workbench.colorTheme": "Gruvbox Dark Medium",
+    "workbench.colorTheme": "Nord",
     "editor.fontFamily": "Cascadia Mono",
     "editor.lineNumbers": "relative",
     "security.workspace.trust.enabled": false,
