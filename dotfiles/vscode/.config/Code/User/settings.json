@@ -7,6 +7,12 @@
     "security.workspace.trust.enabled": false,
     "window.enableMenuBarMnemonics": false,
     "json.format.keepLines": true,
+    "markdown-pdf.displayHeaderFooter": false,
+    "markdown-pdf.margin.top": "1.5cm",
+    "markdown-pdf.margin.bottom": "1cm",
+    "markdown-pdf.margin.left": "1cm",
+    "markdown-pdf.margin.right": "1cm",
+    "markdown-pdf.format": "A4",
     // VIM Settings
     "vim.changeWordIncludesWhitespace": true,
     "vim.incsearch": true,
