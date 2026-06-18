@@ -17,6 +17,14 @@ spotify
 thunderbird
 visual-studio-code-bin
 
+qemu-full
+libvirt
+virt-manager 
+dnsmasq
+swtpm
+edk2-ovmf
+
+
 # dev libraries
 aspnet-runtime
 aspnet-runtime-8.0
