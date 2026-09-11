@@ -4,10 +4,6 @@
 alacritty
 btop
 brave-bin
-cups
-cups-browsed
-cups-filters
-cups-pdf
 discord
 hyprmon-bin
 imagemagick
@@ -23,7 +19,12 @@ virt-manager
 dnsmasq
 swtpm
 edk2-ovmf
-
+# printer
+epson-inkjet-printer-escpr2
+cups
+cups-browsed
+cups-filters
+cups-pdf
 
 # dev libraries
 aspnet-runtime
