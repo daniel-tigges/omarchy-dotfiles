@@ -1,21 +1,22 @@
 # Packages which should be installed
 
-1password-beta
-alacritty
+1password
+1password-cli
 btop
-brave-bin
+brave-origin-bin
 discord
-hyprmon-bin
 imagemagick
 kdenlive
 localsend
+rsync
+stow
 spotify
 thunderbird
 visual-studio-code-bin
 
 qemu-full
 libvirt
-virt-manager 
+virt-manager
 dnsmasq
 swtpm
 edk2-ovmf
@@ -25,9 +26,3 @@ cups
 cups-browsed
 cups-filters
 cups-pdf
-
-# dev libraries
-aspnet-runtime
-aspnet-runtime-8.0
-dotnet-sdk
-dotnet-sdk-8.0
