@@ -119,5 +119,7 @@
         "editor.defaultFormatter": "Vue.volar"
     },
     "workbench.startupEditor": "none",
-    "vsicons.dontShowNewVersionMessage": true
+    "vsicons.dontShowNewVersionMessage": true,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "extensions.ignoreRecommendations": true
 }
