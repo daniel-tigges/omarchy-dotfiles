@@ -8,7 +8,10 @@ discord
 imagemagick
 kdenlive
 localsend
+mesa-utils
+nvidia-prime
 rsync
+rclone
 stow
 spotify
 thunderbird

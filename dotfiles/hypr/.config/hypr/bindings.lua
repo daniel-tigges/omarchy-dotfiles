@@ -42,7 +42,23 @@ o.bind("CTRL + ALT + SHIFT + h", "Move window to workspace left", hl.dsp.window.
 
 -- vim like motions
 hl.unbind("SUPER + l")
+hl.unbind("SUPER + j")
+hl.unbind("SUPER + k")
+hl.unbind("SUPER + h")
 o.bind("SUPER + h", "Focus window left", hl.dsp.focus({ direction = "l" }))
 o.bind("SUPER + j", "Focus window down", hl.dsp.focus({ direction = "d" }))
 o.bind("SUPER + k", "Focus window up", hl.dsp.focus({ direction = "u" }))
 o.bind("SUPER + l", "Focus window right", hl.dsp.focus({ direction = "r" }))
+
+-- switch omarchy menu binding and quick launch keybinding
+hl.unbind("SUPER + SPACE")
+hl.unbind("SUPER + ALT + SPACE")
+o.bind("SUPER + ALT + SPACE", "Omarchy menu", "omarchy-menu toggle root")
+o.bind("SUPER + SPACE", "Omarchy quick launch", "omarchy-menu toggle apps")
+
+-- bind keyboard overview to SUPER + ALT + K
+hl.unbind("SUPER + ALT + K")
+o.bind("SUPER + ALT + K", "Keyboard overview", "omarchy-menu-keybindings")
+
+-- launch browser on dedicated NVIDIA GPU
+o.bind("SUPER + ALT + B", "Browser (NVIDIA)", { launch = "brave-nvidia" })
