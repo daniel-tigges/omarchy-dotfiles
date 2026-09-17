@@ -1,9 +1,14 @@
 #!/bin/bash
 
-# 1. Überprüfen, ob das Skript als Root ausgeführt wird
+# 1. Überprüfen, ob Root-Rechte vorhanden sind oder erlangt werden können
 if [ "$EUID" -ne 0 ]; then
-  echo "Fehler: Bitte führe dieses Skript mit Root-Rechten aus (z. B. sudo ./install_services.sh)."
-  exit 1
+  if ! sudo -v; then
+    echo "Fehler: Bitte führe dieses Skript mit Root-Rechten aus (z. B. sudo ./register-systemd-services.sh)."
+    exit 1
+  fi
+  SUDO="sudo"
+else
+  SUDO=""
 fi
 
 # 2. Pfad zum Skript selbst und dem parallelen 'services'-Ordner ermitteln
@@ -35,23 +40,30 @@ for filepath in "${SERVICE_FILES[@]}"; do
     filename=$(basename "$filepath")
     echo "  -> Kopiere $filename nach $SYSTEMD_DIR"
     
-    cp "$filepath" "$SYSTEMD_DIR/"
+    $SUDO cp "$filepath" "$SYSTEMD_DIR/"
     # systemd erwartet für Service-Dateien in der Regel die Rechte 644
-    chmod 644 "$SYSTEMD_DIR/$filename"
+    $SUDO chmod 644 "$SYSTEMD_DIR/$filename"
 done
 
 # 5. systemd die neuen Dateien bekannt machen
 echo "Lade systemd-Konfiguration neu (daemon-reload)..."
-systemctl daemon-reload
+$SUDO systemctl daemon-reload
 
 # 6. Services aktivieren (Autostart) und sofort starten
 echo "Aktiviere und starte die Services..."
 for filepath in "${SERVICE_FILES[@]}"; do
     filename=$(basename "$filepath")
+
+    # Falls der Service ein Verzeichnis voraussetzt, sicherstellen dass es existiert
+    assert_dir=$(grep -E '^AssertPathIsDirectory=' "$filepath" | cut -d'=' -f2-)
+    if [ -n "$assert_dir" ] && [ ! -d "$assert_dir" ]; then
+        echo "  -> Erstelle Mount-Verzeichnis: $assert_dir"
+        mkdir -p "$assert_dir"
+    fi
     
     echo "  -> Enable & Start: $filename"
-    systemctl enable "$filename"
-    systemctl start "$filename"
+    $SUDO systemctl enable "$filename"
+    $SUDO systemctl start "$filename"
 done
 
 echo "Vorgang erfolgreich abgeschlossen!"

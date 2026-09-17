@@ -1,0 +1,25 @@
+[Unit]
+Description=Rclone Mount for Paperless Consume SMB Share
+Wants=network-online.target
+After=network-online.target
+AssertPathIsDirectory=/home/daniel/Paperless-Consume
+
+[Service]
+Type=notify
+User=daniel
+Group=daniel
+
+ExecStart=/usr/bin/rclone mount paperless-consume:consume /home/daniel/Paperless-Consume \
+  --config /home/daniel/.config/rclone/rclone.conf \
+  --vfs-cache-mode full \
+  --vfs-cache-max-size 10G \
+  --log-level INFO \
+  --log-file /tmp/rclone-paperless-consume.log
+
+ExecStop=/bin/fusermount -u /home/daniel/Paperless-Consume
+
+Restart=on-failure
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
