@@ -56,9 +56,15 @@ hl.unbind("SUPER + ALT + SPACE")
 o.bind("SUPER + ALT + SPACE", "Omarchy menu", "omarchy-menu toggle root")
 o.bind("SUPER + SPACE", "Omarchy quick launch", "omarchy-menu toggle apps")
 
--- bind keyboard overview to SUPER + ALT + K
+-- Keychron key (left of volume knob): Mute active input / microphone
 hl.unbind("SUPER + ALT + K")
-o.bind("SUPER + ALT + K", "Keyboard overview", "omarchy-menu-keybindings")
+o.bind("SUPER + ALT + K", "Mute microphone", "omarchy-audio-input-mute", { locked = true })
+
+-- Keyboard overview
+o.bind("SUPER + SHIFT + K", "Keyboard overview", "omarchy-menu-keybindings")
 
 -- launch browser on dedicated NVIDIA GPU
 o.bind("SUPER + ALT + B", "Browser (NVIDIA)", { launch = "brave-nvidia" })
+
+-- Mute active input / microphone
+o.bind("SUPER + M", "Mute microphone", "omarchy-audio-input-mute", { locked = true })

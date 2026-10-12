@@ -1,0 +1,27 @@
+[Unit]
+Description=Rclone Mount for Printer FTP Server
+Wants=network-online.target
+After=network-online.target
+AssertPathIsDirectory=/home/daniel/Printer-Scans
+
+[Service]
+Type=notify
+User=daniel
+Group=daniel
+
+ExecStart=/usr/bin/rclone mount printer-ftp: /home/daniel/Printer-Scans \
+  --config /home/daniel/.config/rclone/rclone.conf \
+  --dir-cache-time 5s \
+  --poll-interval 0 \
+  --vfs-cache-mode full \
+  --vfs-cache-max-size 10G \
+  --log-level INFO \
+  --log-file /tmp/rclone-printer-ftp.log
+
+ExecStop=/bin/fusermount -u /home/daniel/Printer-Scans
+
+Restart=on-failure
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
